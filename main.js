@@ -79,7 +79,7 @@
         carrito.push(producto)
     }
 
-    nuevaVenta("pulsera acero")
+    /* nuevaVenta("pulsera acero") */
 
     //COMPROBACION        -----------------------este despues va a ser un boton!!!
     /* nuevaVenta(prompt("nombre")) */
@@ -106,7 +106,13 @@ for(const producto of productosALaVenta){
                     <button id=${producto.id} > COMPRAR </button>
                     <hr>
                     `
-    document.body.appendChild(div)                    
+                    
+                    document.body.appendChild(div)                    
+                    const boton=document.getElementById(producto.id)
+                    boton.onclick=()=>{
+                        nuevaVenta(producto.nombre)
+                        console.log(producto.nombre)
+                }
 }
 
 /* -------------------------CARRITO DE COMPRAS --------------------------------- */
