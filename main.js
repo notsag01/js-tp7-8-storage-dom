@@ -77,6 +77,18 @@
         const producto =bucar(nombre)
             
         carrito.push(producto)
+
+        for(const producto of carrito){
+            const div=document.createElement("div")
+        
+            div.innerHTML=`<h2>${producto.nombre}</h2>
+                            <h3> $${producto.costo} </h3>
+                            <button id=${producto.id} > COMPRAR </button>
+                            <hr>
+                            `
+            document.body.appendChild(div)     
+        }
+
     }
 
     /* nuevaVenta("pulsera acero") */
@@ -107,31 +119,23 @@ for(const producto of productosALaVenta){
                     <hr>
                     `
                     
-                    document.body.appendChild(div)                    
+                    document.body.appendChild(div)          
+                    //llamo al boton y lo envìo a nueva venta donde pushea al producto al carrito          
                     const boton=document.getElementById(producto.id)
                     boton.onclick=()=>{
                         nuevaVenta(producto.nombre)
-                        console.log(producto.nombre)
+                        console.log(carrito)
                 }
 }
 
 /* -------------------------CARRITO DE COMPRAS --------------------------------- */
-console.log(carrito)
+
 
 const carritoDeCompras= document.createElement("h1")
 carritoDeCompras.innerHTML="CARRITO DE COMPRAS"
 document.body.appendChild(carritoDeCompras)
 
-for(const producto of carrito){
-    const div=document.createElement("div")
 
-    div.innerHTML=`<h2>${producto.nombre}</h2>
-                    <h3> $${producto.costo} </h3>
-                    <button id=${producto.id} > COMPRAR </button>
-                    <hr>
-                    `
-    document.body.appendChild(div)     
-}
 
 
     
