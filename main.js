@@ -78,7 +78,7 @@
             
         carrito.push(producto)
 
-        for(const producto of carrito){
+        carrito.forEach(producto => {
             const div=document.createElement("div")
         
             div.innerHTML=`<h2>${producto.nombre}</h2>
@@ -86,16 +86,12 @@
                             <button id=${producto.id} > COMPRAR </button>
                             <hr>
                             `
-            document.body.appendChild(div)     
+            document.body.appendChild(div) 
+        });
+                
         }
 
-    }
-
-    /* nuevaVenta("pulsera acero") */
-
-    //COMPROBACION        -----------------------este despues va a ser un boton!!!
-    /* nuevaVenta(prompt("nombre")) */
-
+    
     localStorage.setItem("carrito de compras", JSON.stringify(carrito))
 
 
