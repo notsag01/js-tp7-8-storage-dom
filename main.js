@@ -104,6 +104,7 @@
 /* ------------------------   H1   ---------------------------------------------- */    
 const titulo=document.createElement("h1")
 titulo.innerHTML="PRODUCTOS A LA VENTA"
+titulo.style="text-align:center; margin:3rem"
 
 document.body.appendChild(titulo)
 
@@ -133,7 +134,9 @@ for(const producto of productosALaVenta){
 
 const carritoDeCompras= document.createElement("h1")
 carritoDeCompras.innerHTML="CARRITO DE COMPRAS"
+carritoDeCompras.style="text-align:center; margin:3rem"
 document.body.appendChild(carritoDeCompras)
+
 
 
 
