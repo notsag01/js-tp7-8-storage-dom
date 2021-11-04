@@ -102,27 +102,30 @@ const titulo=document.createElement("h1")
 titulo.innerHTML="PRODUCTOS A LA VENTA"
 titulo.style="text-align:center; margin:3rem"
 
-document.body.appendChild(titulo)
+document.body.prepend(titulo)
 
 /* ------------------------  AGREGO PRODUCTOS A AL VENTA AL HTML   -------------------- */
 console.log(productosALaVenta)
 
 for(const producto of productosALaVenta){
-    const div=document.createElement("div")
+    $(`#productos-a-la-venta`).append(
 
-    div.innerHTML=`<h2>${producto.nombre}</h2>
+                    `
+                    <div id= "contenedor-producto">
+                    <h2>${producto.nombre}</h2>
                     <h4>$${producto.costo} </h4>
-                    <button id=${producto.id} > COMPRAR </button>
+                    <button id="boton-${producto.id}" > COMPRAR </button>
+                    </div>
                     <hr>
                     `
-                    
-                    document.body.appendChild(div)          
-                    //llamo al boton y lo envìo a nueva venta donde pushea al producto al carrito          
-                    const boton=document.getElementById(producto.id)
-                    boton.onclick=()=>{
-                        nuevaVenta(producto.nombre)
-                        console.log(carrito)
-                }
+                    )                       
+
+                    $(`#boton-${producto.id}`).click(
+                        function(){
+                            nuevaVenta(producto.nombre)
+                        }
+                        
+                    )
 }
 
 /* -------------------------CARRITO DE COMPRAS --------------------------------- */
